@@ -1,0 +1,9 @@
+[user]
+	email = un.pensiero.vano@gmail.com
+	name = ynqa
+[alias]
+	st = status
+	br = branch
+	co = checkout
+[core]
+	excludesfile = /Users/a14186/.gitignore_global
