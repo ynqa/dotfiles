@@ -27,7 +27,6 @@ init_anyenv() {
     echo "Install anyenv (with update) and pyenv..."
     if [ ! -e ${HOME}/.anyenv ]; then
         git clone https://github.com/riywo/anyenv ${HOME}/.anyenv
-        anyenv install pyenv
         mkdir -p $(anyenv root)/plugins
         git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
     fi
@@ -45,3 +44,4 @@ init_brew
 init_zsh
 init_anyenv
 link_dots
+
