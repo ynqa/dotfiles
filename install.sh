@@ -39,6 +39,12 @@ link_dots() {
     done
 }
 
+make_workspace() {
+    cp -r workspace/ ${HOME}/workspace
+    cd ${HOME}/workspace
+    direnv allow
+}
+
 # go_pkg for vscode.
 install_go_pkg() {
     go get -u -v github.com/nsf/gocode
@@ -58,5 +64,6 @@ init_brew
 init_zsh
 init_anyenv
 link_dots
+make_workspace
 install_go_pkg
 
