@@ -1,10 +1,10 @@
 
-# tap repositories and their packages
-
-tap homebrew/core
+# Other Homebrew packages
 brew bazel
+brew brew-file
 brew direnv
 brew gettext
+brew go
 brew htop
 brew hugo
 brew jq
@@ -29,15 +29,11 @@ brew watch
 brew wget
 brew zsh
 
-tap caskroom/cask
+# Other Cask applications
 cask docker
 cask google-chrome
-cask intellij-idea
 cask iterm2
+cask keka
 cask minikube
 cask slack
 cask visual-studio-code
-
-tap rcmdnk/file
-brew brew-file
-
