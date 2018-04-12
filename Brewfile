@@ -2,6 +2,7 @@
 # Other Homebrew packages
 brew bazel
 brew brew-file
+brew dep
 brew direnv
 brew gettext
 brew go
