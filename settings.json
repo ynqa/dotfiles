@@ -1,0 +1,12 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "[cpp]": {
+        "editor.autoIndent": false,
+        "editor.tabSize": 2,
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": false,
+    },
+    "python.formatting.provider": "yapf",
+}

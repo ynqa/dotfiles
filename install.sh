@@ -39,6 +39,11 @@ link_dots() {
     done
 }
 
+link_vscode_setting() {
+    echo "Link vscode setting.json"
+    ln -snfv ${SCRIPT_ROOT}/settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
+}
+
 make_workspace() {
     cp -r workspace/ ${HOME}/workspace
     cd ${HOME}/workspace
@@ -64,6 +69,6 @@ init_brew
 init_zsh
 init_anyenv
 link_dots
+link_vscode_setting
 make_workspace
 install_go_pkg
-
