@@ -11,6 +11,9 @@ init_brew() {
     echo "Install brew file..."
     brew install rcmdnk/file/brew-file
 
+    echo "Install java8..."
+    brew cask install caskroom/versions/java8
+
     echo "Install brew packages from Brewfile..."
     brew file install -f Brewfile
 }
@@ -41,6 +44,7 @@ link_dots() {
 
 link_vscode_setting() {
     echo "Link vscode setting.json"
+    mkdir -p ${HOME}/Library/Application\ Support/Code/User/
     ln -snfv ${SCRIPT_ROOT}/settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
 }
 
