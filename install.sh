@@ -42,6 +42,17 @@ link_dots() {
     done
 }
 
+install_vscode_package() {
+    echo "Install vscode packages"
+    code --install-extension ms-python.python
+    code --install-extension ms-vscode.cpptools
+    code --install-extension robertohuertasm.vscode-icons
+    code --install-extension ms-vscode.go
+    code --install-extension PeterJausovec.vscode-docker
+    code --install-extension mauve.terraform
+    code --install-extension DevonDCarew.bazel-code
+}
+
 link_vscode_setting() {
     echo "Link vscode setting.json"
     mkdir -p ${HOME}/Library/Application\ Support/Code/User/
@@ -56,23 +67,24 @@ make_workspace() {
 
 # go_pkg for vscode.
 install_go_pkg() {
-    go get -u -v github.com/nsf/gocode
-    go get -u -v github.com/rogpeppe/godef
-    go get -u -v github.com/zmb3/gogetdoc
-    go get -u -v github.com/golang/lint/golint
-    go get -u -v github.com/lukehoban/go-outline
-    go get -u -v sourcegraph.com/sqs/goreturns
-    go get -u -v golang.org/x/tools/cmd/gorename
-    go get -u -v github.com/tpng/gopkgs
-    go get -u -v github.com/newhook/go-symbols
-    go get -u -v golang.org/x/tools/cmd/guru
-    go get -u -v github.com/cweill/gotests/...
+    GOPATH=${HOME}/workspace go get -u -v github.com/nsf/gocode
+    GOPATH=${HOME}/workspace go get -u -v github.com/rogpeppe/godef
+    GOPATH=${HOME}/workspace go get -u -v github.com/zmb3/gogetdoc
+    GOPATH=${HOME}/workspace go get -u -v github.com/golang/lint/golint
+    GOPATH=${HOME}/workspace go get -u -v github.com/lukehoban/go-outline
+    GOPATH=${HOME}/workspace go get -u -v sourcegraph.com/sqs/goreturns
+    GOPATH=${HOME}/workspace go get -u -v golang.org/x/tools/cmd/gorename
+    GOPATH=${HOME}/workspace go get -u -v github.com/tpng/gopkgs
+    GOPATH=${HOME}/workspace go get -u -v github.com/newhook/go-symbols
+    GOPATH=${HOME}/workspace go get -u -v golang.org/x/tools/cmd/guru
+    GOPATH=${HOME}/workspace go get -u -v github.com/cweill/gotests/...
 }
 
 init_brew
 init_zsh
 init_anyenv
 link_dots
+install_vscode_package
 link_vscode_setting
 make_workspace
 install_go_pkg
