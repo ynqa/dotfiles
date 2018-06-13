@@ -25,6 +25,12 @@ init_zsh() {
     fi
 }
 
+move_bash() {
+    latest=$(ls -Art /usr/local/Cellar/bash/ | tail -n 1)
+    sudo mv /bin/bash /bin/bash_old
+    sudo ln -s /usr/local/Cellar/bash/${latest}/bin/bash /bin/bash
+}
+
 init_anyenv() {
     echo "Install anyenv (with update) and pyenv..."
     if [ ! -e ${HOME}/.anyenv ]; then
@@ -82,6 +88,7 @@ install_go_pkg() {
 
 init_brew
 init_zsh
+move_bash
 init_anyenv
 link_dots
 install_vscode_package

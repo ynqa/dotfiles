@@ -1,5 +1,6 @@
 
 # Other Homebrew packages
+brew bash
 brew bazel
 brew brew-file
 brew dep
