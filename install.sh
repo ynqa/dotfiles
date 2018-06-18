@@ -86,6 +86,10 @@ install_go_pkg() {
     GOPATH=${HOME}/workspace go get -u -v github.com/cweill/gotests/...
 }
 
+add_gitignore() {
+    git config --global core.excludesfile ${HOME}/.gitignore_global
+}
+
 init_brew
 init_zsh
 move_bash
@@ -95,3 +99,4 @@ install_vscode_package
 link_vscode_setting
 make_workspace
 install_go_pkg
+add_gitignore
