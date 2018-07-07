@@ -41,11 +41,17 @@ init_anyenv() {
 }
 
 link_dots() {
-    echo "Link dotfiles under \$HOME"
+    echo "Link dotfiles under \${HOME}"
     for dot in .??*; do
         [[ ${dot} = ".git" ]] && continue
         ln -snfv ${SCRIPT_ROOT}/${dot} ${HOME}/${dot}
     done
+}
+
+link_brew() {
+    echo "Link Brewfile under \${HOME}/.config/brewfile/Brewfile"
+    mkdir ${HOME}/.config/brewfile
+    ln -snfv ${SCRIPT_ROOT}/Brewfile ${HOME}/.config/brewfile/Brewfile
 }
 
 install_vscode_package() {
@@ -95,6 +101,7 @@ init_zsh
 move_bash
 init_anyenv
 link_dots
+link_brew
 install_vscode_package
 link_vscode_setting
 make_workspace
