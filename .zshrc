@@ -58,3 +58,6 @@ alias g="git"
 alias drm='docker rm -f $(docker ps -aq)'
 alias drmi='docker rmi -f $(docker images -aq)'
 alias drsh='docker run --entrypoint="bash" -it'
+
+# rust
+export PATH=${HOME}/.cargo/bin:${PATH}
