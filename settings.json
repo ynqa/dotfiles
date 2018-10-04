@@ -11,12 +11,13 @@
     },
     "go.lintTool": "gometalinter",
     "go.lintFlags": [
-	    "--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\"",
-    	"--config=${HOME}/.gometalinter",
+        "--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\"",
+        "--config=${HOME}/.gometalinter",
     ],
     "[python]": {
         "editor.tabSize": 4,
     },
     "python.formatting.provider": "yapf",
     "python.linting.pylintEnabled": true,
+    
 }
