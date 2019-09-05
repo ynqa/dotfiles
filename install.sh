@@ -21,15 +21,21 @@ init_anyenv() {
 link_dots() {
     echo "Link dotfiles under \${HOME}"
     for dot in .??*; do
-        [[ ${dot} = ".git" ]] && continue
+        if [ ${dot} = .git ]; then
+            continue
+        fi
         ln -snfv ${SCRIPT_ROOT}/${dot} ${HOME}/${dot}
     done
 }
 
 link_vscode_setting() {
     echo "Link vscode setting.json"
-    mkdir -p ${HOME}/Library/Application\ Support/Code/User/
-    ln -snfv ${SCRIPT_ROOT}/settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
+    # Mac
+    # SETTINGS_DIR="${HOME}/Library/Application\ Support/Code/User/"
+    # Ubuntu
+    SETTINGS_DIR="${HOME}/.config/Code/User/"
+    mkdir -p ${SETTINGS_DIR}
+    ln -snfv ${SCRIPT_ROOT}/settings.json ${SETTINGS_DIR}/settings.json
 }
 
 add_gitignore() {
