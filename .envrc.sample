@@ -1,0 +1,4 @@
+unset GOPATH
+path_add GOPATH $(pwd)
+path_add GOBIN $(pwd)/bin
+PATH_add ${GOBIN}
