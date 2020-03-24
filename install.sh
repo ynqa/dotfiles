@@ -28,16 +28,6 @@ link_dots() {
     done
 }
 
-link_vscode_setting() {
-    echo "Link vscode setting.json"
-    # Mac
-    # SETTINGS_DIR="${HOME}/Library/Application\ Support/Code/User/"
-    # Ubuntu
-    SETTINGS_DIR="${HOME}/.config/Code/User/"
-    mkdir -p ${SETTINGS_DIR}
-    ln -snfv ${SCRIPT_ROOT}/settings.json ${SETTINGS_DIR}/settings.json
-}
-
 add_gitignore() {
     git config --global core.excludesfile ${HOME}/.gitignore_global
 }
@@ -45,5 +35,4 @@ add_gitignore() {
 init_zsh
 init_anyenv
 link_dots
-link_vscode_setting
 add_gitignore
